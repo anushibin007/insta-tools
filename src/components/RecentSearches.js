@@ -28,9 +28,9 @@ const RecentSearches = () => {
 						<Card.Body>
 							<ListGroup>
 								{recents.map((recent) => (
-									<ListGroup.Item key={recent}>
-										<Link to={`dp/${recent}`}>{recent}</Link>
-									</ListGroup.Item>
+									<Link to={`dp/${recent}`} key={recent}>
+										<ListGroup.Item>{recent}</ListGroup.Item>
+									</Link>
 								))}
 							</ListGroup>
 						</Card.Body>
