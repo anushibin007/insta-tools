@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FormControl } from "react-bootstrap";
 import Constants from "../utils/Constants";
 
 const UserSearch = (props) => {
@@ -30,14 +30,10 @@ const UserSearch = (props) => {
 
 	return (
 		<React.Fragment>
-			<Form onSubmit={handleFormSubmit}>
-				<Form.Group controlId="username">
-					<Form.Label>Instagram Username</Form.Label>
-					<Form.Control type="text" placeholder="Enter an Instagram user's username" onChange={handleUsernameChanged} required />
-				</Form.Group>
-				<br />
+			<Form onSubmit={handleFormSubmit} className="d-flex">
+				<FormControl type="text" placeholder="Enter an Instagram user's username" onChange={handleUsernameChanged} required autoFocus />
 				<Button variant="primary" type="submit">
-					Submit
+					Search
 				</Button>
 			</Form>
 		</React.Fragment>
