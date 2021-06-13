@@ -12,7 +12,7 @@ function App() {
 	return (
 		<Container>
 			<Navigation />
-			<Router>
+			<Router basename="/insta-tools">
 				<Switch>
 					<Route path="/" exact component={UserSearch} />
 					<Route path="/dp/:username" component={DisplayPicture} />

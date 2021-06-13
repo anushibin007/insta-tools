@@ -17,7 +17,7 @@ const UserSearch = (props) => {
 		<Form onSubmit={handleFormSubmit}>
 			<Form.Group controlId="username">
 				<Form.Label>Instagram Username</Form.Label>
-				<Form.Control type="text" placeholder="Enter a public Instagram user's username" onChange={handleUsernameChanged} />
+				<Form.Control type="text" placeholder="Enter an Instagram user's username" onChange={handleUsernameChanged} required />
 			</Form.Group>
 			<br />
 			<Button variant="primary" type="submit">
