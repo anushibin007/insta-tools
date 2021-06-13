@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Alert, ProgressBar } from "react-bootstrap";
+import { Alert, ProgressBar, Image } from "react-bootstrap";
 import InstaUtils from "../utils/InstaUtils";
 
 const DisplayPicture = (props) => {
@@ -27,7 +27,7 @@ const DisplayPicture = (props) => {
 			return (
 				<Alert variant="secondary">
 					<a href={dpUrl} target="_blank" rel="noopener noreferrer">
-						Show DP
+						<Image src={dpUrl} href={dpUrl} fluid />
 					</a>
 				</Alert>
 			);
