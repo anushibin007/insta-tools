@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "animate.css/animate.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserSearch from "./components/UserSearch";
+import DisplayPicture from "./components/DisplayPicture";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact component={UserSearch} />
+					<Route path="/dp/:username" component={DisplayPicture} />
 				</Switch>
 			</Router>
 		</Container>

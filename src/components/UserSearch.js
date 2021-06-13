@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 const UserSearch = (props) => {
-	const [userid, setUserid] = useState("");
+	const [username, setUsername] = useState("");
 
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
-		props.history.push("dp?userid=" + userid);
+		props.history.push("dp/" + username);
 	};
 
-	const handleUseridChanged = (event) => {
-		setUserid(event.target.value);
+	const handleUsernameChanged = (event) => {
+		setUsername(event.target.value);
 	};
 
 	return (
 		<Form onSubmit={handleFormSubmit}>
-			<Form.Group controlId="userid">
-				<Form.Label>Instagram User ID</Form.Label>
-				<Form.Control type="text" placeholder="Enter a public Instagram user's ID" onChange={handleUseridChanged} />
+			<Form.Group controlId="username">
+				<Form.Label>Instagram Username</Form.Label>
+				<Form.Control type="text" placeholder="Enter a public Instagram user's username" onChange={handleUsernameChanged} />
 			</Form.Group>
 			<br />
 			<Button variant="primary" type="submit">
