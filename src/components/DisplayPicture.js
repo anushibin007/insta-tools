@@ -25,7 +25,7 @@ const DisplayPicture = (props) => {
 			return <Alert variant="danger">There was an error processing DP URL for your request</Alert>;
 		} else {
 			return (
-				<Alert variant="secondary">
+				<Alert variant="secondary" className="text-center">
 					<a href={dpUrl} target="_blank" rel="noopener noreferrer">
 						<Image src={dpUrl} href={dpUrl} fluid />
 					</a>
