@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Accordion, Card, ListGroup } from "react-bootstrap";
+import { Accordion, Card, Row, Col, Button, ListGroup } from "react-bootstrap";
 import Constants from "../utils/Constants";
 import { Link } from "react-router-dom";
 
@@ -17,12 +17,26 @@ const RecentSearches = () => {
 		}
 	}, []);
 
+	const resetRecents = () => {
+		localStorage.setItem(Constants.LOCALSTORAGE_KEY, "[]");
+		setRecents([]);
+	};
+
 	return (
 		<div>
 			<Accordion defaultActiveKey="0">
 				<Card>
 					<Accordion.Toggle as={Card.Header} eventKey="0">
-						<h5>Your Recent Searches</h5>
+						<Row>
+							<Col>
+								<h5>Your Recent Searches</h5>
+							</Col>
+							<Col>
+								<Button variant="warning" onClick={resetRecents} className="float-end">
+									<i className="bi bi-x-octagon"></i> Reset
+								</Button>
+							</Col>
+						</Row>
 					</Accordion.Toggle>
 					<Accordion.Collapse eventKey="0">
 						<Card.Body>
