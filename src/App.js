@@ -12,6 +12,7 @@ function App() {
 	return (
 		<Container>
 			<Navigation />
+			<br />
 			<Router basename="/insta-tools">
 				<Switch>
 					<Route path="/" exact component={UserSearch} />
