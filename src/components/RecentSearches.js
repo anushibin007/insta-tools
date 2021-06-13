@@ -33,7 +33,7 @@ const RecentSearches = () => {
 							</Col>
 							<Col>
 								<Button variant="warning" onClick={resetRecents} className="float-end">
-									<i className="bi bi-x-octagon"></i> Reset
+									<i className="bi bi-x-octagon"></i> Clear
 								</Button>
 							</Col>
 						</Row>
