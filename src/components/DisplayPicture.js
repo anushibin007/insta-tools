@@ -9,7 +9,7 @@ const DisplayPicture = (props) => {
 	useEffect(() => {
 		InstaUtils.getDpUrl(username)
 			.then((response) => {
-				setDpUrl(response.data);
+				setDpUrl(response.data.base64);
 			})
 			.catch((err) => {
 				// error occured
@@ -17,6 +17,11 @@ const DisplayPicture = (props) => {
 				setDpUrl("500");
 			});
 	}, [username]);
+
+	const openImageInNewTab = () => {
+		var newTab = window.open();
+		newTab.document.body.innerHTML = `<img src="${dpUrl}" />`;
+	};
 
 	const renderDpUrl = () => {
 		if (dpUrl === "") {
@@ -26,9 +31,9 @@ const DisplayPicture = (props) => {
 		} else {
 			return (
 				<Alert variant="secondary" className="text-center">
-					<a href={dpUrl} target="_blank" rel="noopener noreferrer">
-						<Image src={dpUrl} href={dpUrl} fluid />
-					</a>
+					<button href="#" style={{ border: "0px" }}>
+						<Image src={dpUrl} fluid onClick={openImageInNewTab} />
+					</button>
 				</Alert>
 			);
 		}
