@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Accordion, Card, Row, Col, Button, ListGroup } from "react-bootstrap";
+import { Accordion, Card, Button, ListGroup } from "react-bootstrap";
 import Constants from "../utils/Constants";
 import { Link } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const RecentSearches = () => {
 								))}
 							</ListGroup>
 							{recents.length > 0 && (
-								<Button variant="warning" style={{ "margin-bottom": "10px", "margin-top": "10px" }} onClick={resetRecents} className="float-end">
+								<Button variant="warning" style={{ marginBottom: "10px", marginTop: "10px" }} onClick={resetRecents} className="float-end">
 									🧹 Clear Recents
 								</Button>
 							)}
