@@ -25,7 +25,6 @@ const DisplayPicture = (props) => {
 	};
 
 	const waitAnimation = () => {
-		//return <ProgressBar animated now={100} />;
 		return (
 			<Alert variant="secondary" className="text-center">
 				<center>
@@ -35,16 +34,6 @@ const DisplayPicture = (props) => {
 			</Alert>
 		);
 	};
-
-	/*const getRandomLoadingMessage = () => {
-		const options = {
-			min: 0,
-			max: LoadingMessages.messages.length,
-			integer: true,
-		};
-		const randomNumber = rn(options);
-		return LoadingMessages.messages[randomNumber];
-	};*/
 
 	const renderDpUrl = () => {
 		if (dpUrl === "") {
