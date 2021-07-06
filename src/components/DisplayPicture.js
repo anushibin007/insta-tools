@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Alert, ProgressBar, Image } from "react-bootstrap";
+import { Alert, Image } from "react-bootstrap";
 import InstaUtils from "../utils/InstaUtils";
+import * as loaderMessage from "loader-message";
 
 const DisplayPicture = (props) => {
 	const [username] = useState(props.match.params.username);
@@ -23,9 +24,31 @@ const DisplayPicture = (props) => {
 		newTab.document.body.innerHTML = `<img src="${dpUrl}" />`;
 	};
 
+	const waitAnimation = () => {
+		//return <ProgressBar animated now={100} />;
+		return (
+			<Alert variant="secondary" className="text-center">
+				<center>
+					<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_fmvhwsv9.json" background="transparent" speed="2" style={{ width: "300px", height: "300px" }} loop autoplay></lottie-player>
+					<h3 className="animate__animated animate__fadeIn">{loaderMessage.phrase()}</h3>
+				</center>
+			</Alert>
+		);
+	};
+
+	/*const getRandomLoadingMessage = () => {
+		const options = {
+			min: 0,
+			max: LoadingMessages.messages.length,
+			integer: true,
+		};
+		const randomNumber = rn(options);
+		return LoadingMessages.messages[randomNumber];
+	};*/
+
 	const renderDpUrl = () => {
 		if (dpUrl === "") {
-			return <ProgressBar animated now={100} />;
+			return waitAnimation();
 		} else if (dpUrl === "500") {
 			return <Alert variant="danger">There was an error processing DP URL for your request</Alert>;
 		} else {
