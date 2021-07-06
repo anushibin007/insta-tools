@@ -31,9 +31,9 @@ const UserSearch = (props) => {
 	return (
 		<React.Fragment>
 			<Form onSubmit={handleFormSubmit} className="d-flex">
-				<FormControl type="text" placeholder="Enter an Instagram user's username" onChange={handleUsernameChanged} required autoFocus />
+				<FormControl type="text" placeholder="👨 Enter an Instagram user's username" onChange={handleUsernameChanged} required autoFocus />
 				<Button variant="primary" type="submit">
-					Search
+					🔍Search
 				</Button>
 			</Form>
 		</React.Fragment>

@@ -27,16 +27,7 @@ const RecentSearches = () => {
 			<Accordion defaultActiveKey="0">
 				<Card>
 					<Accordion.Toggle as={Card.Header} eventKey="0">
-						<Row>
-							<Col>
-								<h5>Your Recent Searches</h5>
-							</Col>
-							<Col>
-								<Button variant="warning" onClick={resetRecents} className="float-end">
-									<i className="bi bi-x-octagon"></i> Clear
-								</Button>
-							</Col>
-						</Row>
+						<h5>Your Recent Searches</h5>
 					</Accordion.Toggle>
 					<Accordion.Collapse eventKey="0">
 						<Card.Body>
@@ -47,6 +38,12 @@ const RecentSearches = () => {
 									</Link>
 								))}
 							</ListGroup>
+							{recents.length > 0 && (
+								<Button variant="warning" style={{ "margin-bottom": "10px", "margin-top": "10px" }} onClick={resetRecents} className="float-end">
+									🧹 Clear Recents
+								</Button>
+							)}
+							{recents.length === 0 && <h6>No recent searches</h6>}
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>
