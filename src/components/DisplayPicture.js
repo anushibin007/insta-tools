@@ -29,7 +29,7 @@ const DisplayPicture = (props) => {
 		return (
 			<Alert variant="secondary" className="text-center">
 				<center>
-					<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_fmvhwsv9.json" background="transparent" speed="2" style={{ width: "300px", height: "300px" }} loop autoplay></lottie-player>
+					<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_X31SKN.json" background="transparent" speed="2" style={{ width: "300px", height: "300px" }} loop autoplay></lottie-player>
 					<h3 className="animate__animated animate__fadeIn">{loaderMessage.phrase()}</h3>
 				</center>
 			</Alert>
